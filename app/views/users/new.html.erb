@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+
+	<ul>
+	<% @user.errors.full_messages.each do |error| %>
+		<li><%= error %></li>
+	<% end %>
+	</uL>
+
+	<%= f.label :username, "Name" %>
+	<%= f.text_field :username, placeholder: 'Your name here!' %>
+
+	<%= f.label :email, "Contact" %>
+	<%= f.text_field :email, placeholder: 'example@example.com' %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password, placeholder: '*******' %>
+
+	<%= f.submit "Create Account!" %>
+
+<% end %>
